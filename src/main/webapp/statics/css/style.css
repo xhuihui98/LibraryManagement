@@ -1,0 +1,14 @@
+p{
+    margin-left:10px;
+    margin-top:10px;
+}
+body{
+    width: 60%;
+    margin: auto;
+}
+
+#bg{
+    background-image: url("../images/top_bg.gif");
+    height: 200px;
+    position: relative;
+}

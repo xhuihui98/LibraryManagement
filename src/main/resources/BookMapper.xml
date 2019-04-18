@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BookMapper">
+    <insert id="insertBook" parameterType="com.dhu.pojo.Book" useGeneratedKeys="true" >
+    insert into book (ISBN,typename,bookname,author,publisher,price,stock_num,total) values (#{ISBN},#{typeName},#{bookName},#{author},#{publisher},#{price},#{stockNum},#{total});
+    </insert>
+    <select id="selectBook" resultType="com.dhu.pojo.Book">
+        select * from book
+        <where>
+            <if test="bookname != null">
+                bookname = #{bookName}
+            </if>
+            <if test="typename !=null">
+                typename = #{typeName}
+            </if>
+        </where>
+    </select>
+    <update id="updatestocknum">
+        update book set stock_num = #{stockNum}
+    </update>
+
+
+
+
+</mapper>
